@@ -1,16 +1,7 @@
-Here’s your final clean README in markdown format:
+TextualVault
+TextualVault is a Python-based application that combines a Textual User Interface (TUI) with backend logic for data storage, email utilities, and user management.It is built using Python, SQLAlchemy for database operations, and the textual TUI framework.
 
-```markdown
-# TextualVault
-
-TextualVault is a Python-based application that combines a **Textual User Interface (TUI)** with backend logic for data storage, email utilities, and user management.  
-It is built using **Python**, **SQLAlchemy** for database operations, and a TUI framework such as `textual`.
-
----
-
-## 📂 Project Structure
-```
-
+📂 Project Structure
 TextualVault/
 ├── app/
 │ ├── **init**.py # Package initializer
@@ -20,101 +11,91 @@ TextualVault/
 │ ├── main.py # Main backend entry point
 │ ├── models.py # SQLAlchemy models for database tables
 │ ├── tui_main.py # Text-based User Interface entry point
-├── .env # Environment variables (keep secret!)
 ├── .gitignore # Git ignore rules
 ├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+└── .env # Environment variables (ignored by Git)
 
-````
+Note: The .env file contains sensitive information and is ignored by Git for security.
 
----
+🚀 Features
 
-## 🚀 Features
+Database Support: SQLAlchemy ORM for efficient data storage and retrieval.
+Email Utilities: Send OTPs and notifications via configurable SMTP.
+Textual UI: Interactive command-line interface using the textual framework.
+Modular Design: Separated modules for CRUD operations, database models, and UI.
+Environment Configuration: Securely manage API keys, database credentials, and email settings via .env.
 
-- **Database Support** – SQLAlchemy ORM for storing and retrieving data.
-- **Email Utilities** – Send OTPs/notifications via SMTP (configurable).
-- **Textual UI** – Command-line interactive interface.
-- **Modular Design** – Separate modules for CRUD, models, and UI.
-- **Config via `.env`** – API keys, DB credentials, and email settings via environment variables.
+🛠 Installation
+Prerequisites
 
----
+Python 3.8 or higher
+PostgreSQL (for database support)
+A valid SMTP server account for email functionality
+git for cloning the repository
 
-## 🛠 Installation
+Steps
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Shannaseem/TextualVault.git
-   cd TextualVault
-````
+Clone the repository
+git clone https://github.com/Shannaseem/TextualVault.git
+cd TextualVault
 
-2. **Create and activate a virtual environment**
+Create and activate a virtual environment
+python -m venv .venv
 
-   ```bash
-   python -m venv .venv
+# Linux/Mac
 
-   # Linux/Mac
-   source .venv/bin/activate
+source .venv/bin/activate
 
-   # Windows
-   .venv\Scripts\activate
-   ```
+# Windows
 
-3. **Install dependencies**
+.venv\Scripts\activate
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Install dependencies
+pip install -r requirements.txt
 
-4. **Set up environment variables**
-   Create a `.env` file in the project root (replace with your real values):
+Set up environment variables
+Create a .env file in the project root with the following (replace with your values):
+DATABASE_URL=postgresql+psycopg2://user:password@localhost:5432/textualvault
+EMAIL_HOST=smtp.example.com
+EMAIL_PORT=587
+EMAIL_USER=your_email@example.com
+EMAIL_PASSWORD=your_email_app_password
 
-   ```env
-   DATABASE_URL=postgresql+psycopg2://user:password@localhost:5432/textualvault
-   EMAIL_HOST=smtp.example.com
-   EMAIL_PORT=587
-   EMAIL_USER=your_email@example.com
-   EMAIL_PASSWORD=your_email_app_password
-   ```
+▶ Usage
 
----
+Run the backend logic
+python -m app.main
 
-## ▶ Usage
+Run the TUI application
+python -m app.tui_main
 
-- **Run backend logic**
+🔐 Security Precautions
 
-  ```bash
-  python -m app.main
-  ```
+Never commit .env to GitHub as it contains sensitive credentials.
 
-- **Run the TUI application**
+Ensure .gitignore includes:
+.env
+.venv/
+**pycache**/
+\*.pyc
 
-  ```bash
-  python -m app.tui_main
-  ```
+If secrets are accidentally committed, rotate them immediately and purge them from Git history.
 
----
+Use a private repository for projects with sensitive logic or configurations.
 
-## 🔐 Security Precautions
+🤝 Contributing
+Contributions are welcome! To contribute:
 
-- **Never commit `.env` to GitHub** – it contains sensitive credentials.
-- Ensure `.gitignore` includes:
+Fork the repository.
+Create a feature branch (git checkout -b feature/YourFeature).
+Commit your changes (git commit -m 'Add YourFeature').
+Push to the branch (git push origin feature/YourFeature).
+Open a Pull Request.
 
-  ```
-  .env
-  .venv/
-  __pycache__/
-  *.pyc
-  ```
+Please ensure your code follows the project’s coding style and includes appropriate tests.
 
-- If secrets were ever committed, **rotate them immediately** and purge them from Git history.
-- Use a **private repository** if the project contains sensitive logic or configurations.
+👨‍💻 Author
 
----
-
-## 👨‍💻 Author
-
-- **Shan Naseem** – _Initial work_
-- GitHub: [@Shannaseem](https://github.com/Shannaseem)
-
-```
-
-```
+Shan Naseem – Initial work
+GitHub: @Shannaseem
